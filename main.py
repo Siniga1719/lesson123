@@ -1,22 +1,24 @@
-list = [15, 48, 'hello', 6, 19, 'world']
-list2 = list[2] + list[5]
-summa = 0
-list.pop(2)
-list.pop(4)
-for i in list:
-    if i%2==0:
-        summa = summa + i // 10 + i % 10
+password = 1111
+summa_na_schete = 150
+while True:
+    passq = int(input("Для того, чтобы продолжить, Введите пароль: "))
+    if passq == password:
+        print("Пароль введен верно!")
+        choose = int(input("Выберите действие: \n 1) Вывести остаток на карте. \n 2) Снять деньги. \n Введите номер действия: "))
+        if choose == 1:
+            print(summa_na_schete)
+        elif choose == 2:
+            print("Остаток на счете: ", summa_na_schete)
+            snyatie = int(input("Какую сумму желаете снять? \n Введите сумму: "))
+            if 0<snyatie<summa_na_schete:
+                summa_na_schete = summa_na_schete - snyatie
+                print("Вы сняли: ", snyatie, ".", "Ваш остаток: ", summa_na_schete)
+            else:
+                print("Вы ввели неверную сумму, попробуйте еще раз.")
+                continue
+        else:
+            print('Неверный выбор, попробуйте еще раз.')
+            continue
     else:
-        i = list.index(i)
-        list[0] = 1
-print(list)
-print("Сумма четных чисел: ", summa)
-
-gl = 0
-sogl = 0
-for x in list2:
-    if x =="e" or x =="u" or x =="i" or x =="o" or x =="a":
-        gl+=1
-    else:
-        sogl+=1
-print("Глассные: ", gl, "Cогласные: ", sogl)
+        print("Вы ввели неверный пароль, попробуйте еще раз.")
+        continue
